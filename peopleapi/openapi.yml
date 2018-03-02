@@ -1,0 +1,40 @@
+---
+openapi: 3.0.0
+info:
+  title: People API
+  description: An API to get the People in my Org
+  contact:
+    name: Scott England-Sullivan
+    url:
+    email: sully6768@gmail.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  version: 1.0.0
+paths:
+  /people:
+    get:
+      summary: Find A Person
+      parameters:
+      - name: firstName
+        in: query
+        schema:
+          type: string
+      - name: lastName
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: Person Found
+          content:
+            application/json:
+              schema:
+                type: string
+    put:
+      summary: Add A Person
+    delete:
+      summary: Delete A Person
+tags:
+- name: people
+  description:
